@@ -12,7 +12,7 @@ Este projeto desenvolve uma solução de análise preditiva focada na geração 
 * **Modelo Preditivo:** Um modelo de Machine Learning capaz de estimar a Radiação Global com base em medições meteorológicas comuns.
 * **Dashboard Interativo:** Uma interface visual clara e reprodutível para explorar os dados e as predições do modelo.
 
-### 🔍 Hipóteses de Trabalho
+###  Hipóteses de Trabalho
 1. **Correlação Termodinâmica:** Acreditamos que existe uma correlação significativa entre a variação da temperatura (bulbo seco/orvalho) e os níveis de umidade relativa com os picos de radiação global. Esperamos que o modelo consiga usar essas variáveis conjuntas para identificar as melhores janelas de potencial fotovoltaico.
 2. **Impacto de Fatores Secundários:** Hipotetizamos que variáveis como velocidade do vento e pressão atmosférica influenciam indiretamente a incidência solar, possivelmente por estarem atreladas à movimentação de massas de ar e formação de nebulosidade. Queremos investigar se a inclusão dessas features melhora a capacidade do modelo de prever quedas bruscas na radiação.
 
@@ -29,11 +29,11 @@ Este projeto desenvolve uma solução de análise preditiva focada na geração 
 ## Squad e Atribuições
 Para garantir que o pipeline seja end-to-end, dividimos as responsabilidades priorizando perfis complementares, mas com todos atuando ativamente no código:
 
-* ** Emmanuel Magalhães** | **Engenheiro de Dados (Data Prep)**  
+*  Emmanuel Magalhães** | **Engenheiro de Dados (Data Prep)**  
     *Focado em: Ingestão dos dados brutos, tratamento estrutural do CSV do INMET, lida com valores nulos/noturnos e garantia de que o dataset processado esteja pronto para consumo.*
-* ** Felipe Pereira** | **Cientista de Dados (EDA & Modelagem)**  
+*  Felipe Pereira** | **Cientista de Dados (EDA & Modelagem)**  
     *Focado em: Análise Exploratória (EDA) para validar as hipóteses, seleção das melhores features, treinamento do modelo de Machine Learning e avaliação de suas métricas.*
-* ** Mateus Rabelo** | **Engenheiro de Software (Viz & Ops)**   
+*  Mateus Rabelo** | **Engenheiro de Software (Viz & Ops)**   
     *Focado em: Integração do pipeline, desenvolvimento do Dashboard interativo, elaboração dos diagramas UML e gestão do Backlog Ágil no GitHub Projects.*
 
 ---
