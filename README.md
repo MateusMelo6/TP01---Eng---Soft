@@ -29,11 +29,11 @@ Este projeto desenvolve uma solução de análise preditiva focada na geração 
 ## Squad e Atribuições
 Para garantir que o pipeline seja end-to-end, dividimos as responsabilidades priorizando perfis complementares, mas com todos atuando ativamente no código:
 
-*  Emmanuel Magalhães** | **Engenheiro de Dados (Data Prep)**  
+*  Emmanuel Magalhães | **Engenheiro de Dados (Data Prep)**  
     *Focado em: Ingestão dos dados brutos, tratamento estrutural do CSV do INMET, lida com valores nulos/noturnos e garantia de que o dataset processado esteja pronto para consumo.*
-*  Felipe Pereira** | **Cientista de Dados (EDA & Modelagem)**  
+*  Felipe Pereira | **Cientista de Dados (EDA & Modelagem)**  
     *Focado em: Análise Exploratória (EDA) para validar as hipóteses, seleção das melhores features, treinamento do modelo de Machine Learning e avaliação de suas métricas.*
-*  Mateus Rabelo** | **Engenheiro de Software (Viz & Ops)**   
+*  Mateus Rabelo | **Engenheiro de Software (Viz & Ops)**   
     *Focado em: Integração do pipeline, desenvolvimento do Dashboard interativo, elaboração dos diagramas UML e gestão do Backlog Ágil no GitHub Projects.*
 
 ---
