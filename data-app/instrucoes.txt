@@ -1,0 +1,4 @@
+1- python3 -m venv app-env
+2- source app-env/bin/activate
+3- pip install streamlit pandas plotly scikit-learn joblib plotly
+4- streamlit run ./data-app/app.py
