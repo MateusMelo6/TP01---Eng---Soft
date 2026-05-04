@@ -1,5 +1,7 @@
 # ⚡ Projeto Solar Pampulha: Predição de Potencial Energético
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://tp01---eng---soft-mzdkrhacsyoah2bdflazkf.streamlit.app)
+
 > **Disciplina:** Engenharia de Software  
 > **Foco:** Pipeline de Machine Learning para Dados Meteorológicos (INMET 2025)
 ---
@@ -37,6 +39,71 @@ Para garantir que o pipeline seja end-to-end, dividimos as responsabilidades pri
     *Focado em: Integração do pipeline, desenvolvimento do Dashboard interativo, elaboração dos diagramas UML e gestão do Backlog Ágil no GitHub Projects.*
 
 ---
+## Arquitetura do Sistema (UML)
+
+### 1. Diagrama de Sequência (Comportamental)
+Este diagrama ilustra a interação em tempo real entre o usuário, a interface do Dashboard e o modelo de Machine Learning exportado.
+```mermaid
+sequenceDiagram
+    autonumber
+    actor U as Morador/Investidor
+    participant S as App (Streamlit)
+    participant P as Script (previsao.py)
+    participant M as Cérebro (Random Forest .pkl)
+
+    U->>S: Insere Condições (Temp, Umidade, etc.)
+    U->>S: Clica em Simular
+    
+    S->>P: Chama função prever_potencial_solar()
+    activate P
+    
+    P->>M: joblib.load('modelo_solar.pkl')
+    activate M
+    M-->>P: Instancia Objeto do Modelo
+    deactivate M
+    
+    P->>M: model.predict(dados_formatados)
+    activate M
+    M-->>P: Retorna Predição Contínua (Kj/m²)
+    deactivate M
+    
+    P-->>S: Retorna Valor Final
+    deactivate P
+
+    alt Predição > 2200
+        S-->>U: Renderiza UI: "Alta Eficiência ☀️" 
+    else Predição > 1200
+        S-->>U: Renderiza UI: "Eficiência Média ⛅" 
+    else
+        S-->>U: Renderiza UI: "Baixa Eficiência ☁️" 
+    end
+```
+
+### 2. Diagrama de Atividades (Fluxo de Processamento)
+Mapeamento das ações do sistema divididas entre a Interface do Usuário (Frontend) e o Processamento de Dados (Backend).
+```mermaid
+flowchart TD
+    subgraph Frontend [Interface Streamlit]
+        A([Início da Sessão]) --> B{Escolha de Navegação}
+        B -->|Tempo Real| C[Preencher Parâmetros Climáticos]
+        B -->|Investimento| D[Acessar Calculadora de ROI]
+        
+        C --> E[Disparar Previsão]
+        D --> F[Visualizar Gráfico Sazonal]
+        
+        J[Exibir Métrica na Tela] --> K([Fim da Interação])
+    end
+
+    subgraph Backend [Lógica e Modelagem]
+        E --> G[Formatar DataFrame de Entrada]
+        G --> H[Injetar no Modelo Random Forest]
+        H --> I[Aplicar Regras de Negócio/Classificação]
+        I --> J
+    end
+```
+
+---
+
 
 ## Stack Tecnológica
 * **Linguagem:** Python 3.10+
